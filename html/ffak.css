@@ -1,0 +1,55 @@
+body
+{
+	font-family: 'Helvetica';
+    background-color: #558CAC;
+}
+
+h1
+{
+	font-family: 'Helvetica';
+    font-size: 250%;
+	text-shadow: 5px 5px 5px #aaaaaa;
+	text-align:center;
+}
+
+h2
+{
+	font-family: 'Helvetica';
+    font-size: 220%;
+	text-align:center;
+}
+
+h3
+{
+	font-family: 'Helvetica';
+    font-size: 180%;
+	text-align:center;
+}
+
+form
+{
+	font-family: 'Helvetica';
+    text-align:center;
+}
+
+input
+{
+	font-family: 'Helvetica';
+    font-size: 150%;
+	text-align:center;
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid white;
+	border-radius: 10px;
+}
+
+img {
+    display: block;
+	margin: auto;
+}
+
+li {
+	margin: auto;
+}
+
