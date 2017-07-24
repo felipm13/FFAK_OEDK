@@ -14,9 +14,22 @@ if (($handle = fopen("settings.csv", "r")) !== FALSE) {
     }
     fclose($handle);
 }
+$row = 0;
+if (($handle = fopen("config.csv", "r")) !== FALSE) {
+    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+        $num = count($data);
+            $wi = "Wifi: ". $data[0];
+            $ps = "Password: ". $data[1];
+            $c1 = "Camera 1: ".$data[2];
+            $c2 = "Camera 2: ". $data[3];
+    }
+    fclose($handle);
+}
+
 ?>
 <html>
 	<head>
+        <link rel="shortcut icon" href="img/f.jpg" type="image/x-icon">
 		<title>FFAK</title>
 	</head>
         <link rel="stylesheet" type="text/css" href="ffak.css">
@@ -26,10 +39,10 @@ if (($handle = fopen("settings.csv", "r")) !== FALSE) {
 	<body>
 		<h1>Foot for a king</h1>
 		<h2>Device</h2>
-		<h3>v.0.0.0.0.2</h3>	
+		<h3>v. Almost High fidelity</h3>	
 		<br>
 		<br>
-          <div class="form">
+        <div class="form">
                 <form name = "docForm" method="post">
                    <div>
                       <h2>Patient Details</h2>
@@ -46,14 +59,33 @@ if (($handle = fopen("settings.csv", "r")) !== FALSE) {
                       <input type="text" placeholder="<?php echo $md?>" name= "mailD" id = "mailD">
                       <br>
 
-                        <input type='submit' value='Save' name="submit"/>
+                        <input type='submit' value='Save Info' name="submit1"/>
                     </div>
                 </form>
           </div>
         </div>
 		<br>
+        <div class="form">
+                <form name = "configForm" method="post">
+                   <div>
+                      <h2>Device Config</h2>
+                      <br>
+                      <input type="text" placeholder="<?php echo $wi?>" name= "wifi" id = "wifi">
+                      <br>
+                      <input type="text" placeholder="<?php echo $ps?>" name= "password" id = "password">
+                      <br>
+                      <input type="text" placeholder="<?php echo $c1?>" name = "cam1" id = "cam1">
+                      <br>
+                      <input type="text" placeholder="<?php echo $c2?>" name= "cam2" id = "cam2">
+                      <br>
+                        <input type='submit' value='Save Config' name="submit2"/>
+                    </div>
+                </form>
+          </div>
+        </div>
+
         <?php
-            if (isset($_POST['submit']))
+            if (isset($_POST['submit1']))
             {
                 $userName = $_POST['nameU'];
                 $userAge = $_POST['ageU'];
@@ -71,6 +103,28 @@ if (($handle = fopen("settings.csv", "r")) !== FALSE) {
                 fputs($fd,$docMail);
                 fputs($fd,",");
                 fputs($fd,$docName);
+                fputs($fd,"\n");
+                fclose($fd);
+                header("Refresh:0");
+            }
+        ?>
+
+        <?php
+            if (isset($_POST['submit2']))
+            {
+                $wifi = $_POST['wifi'];
+                $password = $_POST['password'];
+                $cam1 = $_POST['cam1'];
+                $cam2 = $_POST['cam2'];
+
+                $fd = fopen ("config.csv", "w");
+                fputs($fd,$wifi);
+                fputs($fd,",");
+                fputs($fd,$password);
+                fputs($fd,",");
+                fputs($fd,$cam1);
+                fputs($fd,",");
+                fputs($fd,$cam2);
                 fputs($fd,"\n");
                 fclose($fd);
                 header("Refresh:0");

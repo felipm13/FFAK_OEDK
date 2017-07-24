@@ -3,6 +3,7 @@
 
 <html>
 	<head>
+        <link rel="shortcut icon" href="img/f.jpg" type="image/x-icon">
 		<title>FFAK</title>
 	</head>
         <link rel="stylesheet" href="/ffak.css">
@@ -12,7 +13,7 @@
 	<body>
 		<h1>Foot for a king</h1>
 		<h2>Device</h2>
-		<h3>v. Medium fidelity</h3>	
+		<h3>v. Almost High fidelity</h3>	
 		<br>
 		<br>
 		<br>
@@ -31,6 +32,11 @@
 		<form action="/settings.php">
 			<input type="submit" value="SETTINGS">
 		</form>
+		<br>
+		<form action="/instructions.php">
+			<input type="submit" value="HOW TO USE">
+		</form>
+		<br>
 		<br>
 		<br>
 		<br>
