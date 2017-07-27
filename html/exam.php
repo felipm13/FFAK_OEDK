@@ -5,16 +5,17 @@
 
 <html>
 	<head>
+        <link rel="shortcut icon" href="img/f.jpg" type="image/x-icon">
 		<title>FFAK</title>
 	</head>
         <link rel="stylesheet" type="text/css" href="ffak.css">
 		<meta name="keywords" content="foot, diabetic, checker">
 		<meta name="description" content="FFAK web page.">
 
-	<body  onload="showPage()" style="margin:0;">
+	<body>
 		<h1>Foot for a king</h1>
 		<h2>Device</h2>
-		<h3>v.Medium Fidelity</h3>	
+		<h3>v. Almost High fidelity</h3>	
 		<br>
 		<br>
 		<br>

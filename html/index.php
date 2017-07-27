@@ -1,16 +1,15 @@
 <?php
-
 session_start();
 if(isset($_SESSION['user'])){
 	header("Location: menu.php");
 	die();
 }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="shortcut icon" href="img/f.jpg" type="image/x-icon">
     <title>FFAK - Login</title>
     <link href="ffak.css" rel="stylesheet">
 

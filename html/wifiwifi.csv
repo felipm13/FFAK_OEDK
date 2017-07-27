@@ -1,0 +1,5 @@
+
+network={
+    ssid='Kelvin Pi'
+    psk='Toerifle'
+}

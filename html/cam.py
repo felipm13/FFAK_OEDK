@@ -36,7 +36,6 @@ class Cam():
                             quotechar=',', quoting=csv.QUOTE_MINIMAL)
             spamwriter.writerow([self.driver, self.num, self.nam, self.pos, self.date, 'img/cam'+ str(self.num) + self.date2 + '.jpg'])
         with file(self.folder_data + 'historyExam.csv', 'r') as original: data = original.read()
-        print(data)
         with open(self.folder_data + 'historyExam.csv', 'w') as csvfile:
             spamwriter = csv.writer(csvfile, delimiter=',',
                             quotechar=',', quoting=csv.QUOTE_MINIMAL)
@@ -44,20 +43,24 @@ class Cam():
         with file(self.folder_data + 'historyExam.csv', 'a') as modified: modified.write(data)
 
     def saveImage(self):
-        os.system('fswebcam  -i 0 -d ' +  self.driver + ' --jpeg 55  --save ' + self.address+' --skip 5 --frames 10 -r 1280x720 --no-banner')
+        os.system('fswebcam  -i 0 -d ' +  self.driver + ' --jpeg 85  --save ' + self.address+' --skip 8 --frames 1 -r 2560x1920 -s Contrast=95% -D 1 -s Gamma=90% --set brightness=55% --no-banner')
+
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(18, GPIO.OUT)
+
 GPIO.output(18, 1)
+
 #for n in range(0, num_cam):
     #camera = Cam(n, "Camera " + str(n), "position")
     #camera.setCamera()
     #camera.saveImage()
 
-camera1 = Cam(0, "Bottom", "position")
-camera1.setCamera()
-camera1.saveImage()
-camera1 = Cam(1, "Toe", "position")
+camera1 = Cam(1, "Bottom", "position")
 camera1.setCamera()
 camera1.saveImage()
 GPIO.output(18, 0)
+camera2 = Cam(0, "Toe", "position")
+camera2.setCamera()
+camera2.saveImage()
+
